@@ -1,0 +1,171 @@
+\documentclass[12pt,a4paper]{report}
+% TEMPLATE PROPOSAL PENELITIAN LPPM
+% Dibuat oleh Budi Susanto (budsus@ti.ukdw.ac.id)
+% Last Update: 16 Februari 2026
+
+% ======================================================
+% PENGATURAN HALAMAN
+% ======================================================
+\usepackage[a4paper,
+left=3cm,
+right=3cm,
+top=3cm,
+bottom=3cm]{geometry}
+\usepackage[indonesian]{babel}
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{etoolbox}
+\usepackage{newtxtext,newtxmath}
+\usepackage[hidelinks]{hyperref}
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+
+% FORMAT BAB
+% ===== CHAPTER =====
+\titleformat{\chapter}[display]
+	{\centering\bfseries\fontsize{16}{18}\selectfont}
+	{BAB \thechapter}
+	{0pt}                       % jarak label ke judul
+	{\vspace{1ex}}              % sebelum judul
+
+\titlespacing*{\chapter}{0pt}{0pt}{16pt}
+
+% ===== SECTION =====
+\titleformat{\section}
+	{\normalfont\bfseries\fontsize{14}{16}\selectfont}
+	{\thesection}
+	{0.8em}
+	{}
+
+% ===== SUBSECTION =====
+\titleformat{\subsection}
+	{\normalfont\bfseries\normalsize}
+	{\thesubsection}
+	{0.7em}
+	{}
+
+% ===== DAFTAR ISI ======
+\renewcommand{\contentsname}{DAFTAR ISI}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill\mbox{}}
+\addto\captionsindonesian{
+	\renewcommand{\contentsname}{DAFTAR ISI}
+}
+
+\setlist{nosep}
+
+\begin{document}
+	
+	% ===============================
+	% SAMPUL
+	% ===============================
+	\begin{titlepage}
+		\begin{flushright}
+			\fbox{\small\textbf{[DIISI JENIS SKEMA PENELITIAN]}}
+		\end{flushright}
+		\centering
+		\vspace{1cm}
+		{\large USULAN PENELITIAN}\\[1cm]
+		
+		\includegraphics[width=4cm]{./fig/logo_ukdw.png}\\[1.5cm]
+		
+		{\large\bfseries [JUDUL PENELITIAN]}\\[2cm]
+		
+		{\large\bfseries TIM PENGUSUL}\\[0.5cm]
+		Nama lengkap ketua (Ketua)\\
+		Nama lengkap Anggota 1  \\
+		Nama lengkap Anggota 2 \\
+		Nama lengkap Anggota 3 \\[3cm]
+		
+		{\large FAKULTAS [NAMA FAKULTAS]}\\
+		{\large UNIVERSITAS KRISTEN DUTA WACANA}\\[0.5cm]
+		
+		Yogyakarta\\
+		Bulan Tahun
+	\end{titlepage}
+	
+	\clearpage
+	\pagenumbering{roman}
+	
+	\include{pengesahan}
+	
+	\tableofcontents
+	
+	% ===============================
+	% PANGGIL FILE BAB
+	% ===============================
+	\clearpage
+	\pagenumbering{arabic}
+	
+	\include{bab1}
+	\include{bab2}
+	\include{bab3}
+	\include{bab4}
+	
+	% ===============================
+	% DAFTAR PUSTAKA
+	% ===============================
+	\cleardoublepage
+	\phantomsection
+	\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+	\renewcommand{\bibname}{DAFTAR PUSTAKA}
+	%\bibliographystyle{apalike} % atau style lain
+	\bibliography{referensi}
+	
+	% ===============================
+	% LAMPIRAN
+	% ===============================
+	\appendix
+	\clearpage
+	\thispagestyle{empty}
+	\addcontentsline{toc}{chapter}{LAMPIRAN}
+	
+	\null
+	\vfill
+	\begin{center}
+		{\Large\bfseries LAMPIRAN}
+	\end{center}
+	\vfill
+	\null
+	\clearpage
+	\include{lampiran1}
+
+	\clearpage	
+	\null
+	\vfill
+	\begin{center}
+		\textbf{LAMPIRAN 2. BIODATA KETUA dan ANGGOTA}
+	\end{center}
+	\vfill
+	\null
+	\addcontentsline{toc}{section}{LAMPIRAN 2. Biodata Ketua dan Anggota}
+	\clearpage
+	\includepdf[pages=-, fitpaper=true]{./pdf/TemplateBIODATA.pdf}
+	
+	\addcontentsline{toc}{section}{LAMPIRAN 3. Surat Pernyataan Ketua Peneliti}
+	\includepdf[
+	pages=-,
+	pagecommand={
+		\thispagestyle{plain}
+		\section*{LAMPIRAN 3. Surat Pernyataan Ketua Peneliti/Pelaksana}
+	}
+	]{./pdf/SuratPernyataanKetua.pdf}
+
+\end{document}
