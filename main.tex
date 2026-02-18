@@ -104,9 +104,15 @@ bottom=3cm]{geometry}
 	\clearpage
 	\pagenumbering{roman}
 	
-	\include{pengesahan}
+	%\include{pengesahan}
+	\addcontentsline{toc}{chapter}{HALAMAN PENGESAHAN}
+	\includepdf[pages=-, fitpaper=true]{./pdf/HalSah.pdf}
 	
 	\tableofcontents
+	
+	\clearpage
+	\addcontentsline{toc}{chapter}{RINGKASAN}
+	\include{ringkasan}
 	
 	% ===============================
 	% PANGGIL FILE BAB
