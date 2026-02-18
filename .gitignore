@@ -1,0 +1,106 @@
+# =========================
+# LaTeX intermediate files
+# =========================
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.nav
+*.snm
+*.vrb
+
+# =========================
+# Latexmk
+# =========================
+latexmkrc
+*.latexmk
+
+# =========================
+# BibLaTeX
+# =========================
+*.bib.bak
+
+# =========================
+# MakeIndex
+# =========================
+*.idx
+*.ind
+*.ilg
+
+# =========================
+# Glossaries
+# =========================
+*.glsdefs
+
+# =========================
+# Minted (Python Pygments)
+# =========================
+_minted*
+*.pyg
+
+# =========================
+# TikZ/PGF
+# =========================
+*.dpth
+*.md5
+*.auxlock
+
+# =========================
+# Backup files
+# =========================
+*~
+*.bak
+*.backup
+*.swp
+*.tmp
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build directories (optional)
+# =========================
+build/
+out/
+dist/
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# IntelliJ / TeXstudio
+# =========================
+.idea/
+*.synctex.gz(busy)
+
+# =========================
+# PDF (optional)
+# =========================
+# Uncomment if you do NOT want to track compiled PDFs
+# *.pdf
